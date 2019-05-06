@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+     image: ap_wp:latest
+     volumes:
+       - ./wp-content/themes/ap-theme:/var/www/html/wp-content/themes/ap-theme
+       - ./wp-content/plugins/sdp-post-types:/var/www/html/wp-content/plugins/sdp-post-types
+     ports:
+       - "80:80"
+     restart: unless-stopped
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+    db_data:
