@@ -35,7 +35,7 @@
     <header>
       <nav class="flex items-center justify-between flex-wrap bg-white border-b-4 border-apprimary px-6 py-2">
         <div id="branding" class="flex flex-wrap items-center w-1/2 sm:w-1/2 md:w-1/3">
-          <a href="<?php echo get_home_url() ?>" id="site-title" class="flex font-semibold text-xl text-grey-darkest tracking-tight pl-4 pr-6">Arkitekturang Pilipino</a>
+          <a href="<?php echo get_home_url() ?>" id="site-title" class="flex font-semibold text-xl text-grey-darkest tracking-tight pl-4 pr-6"><?php echo get_bloginfo( 'name' ); ?></a>
         </div>
         <div class="text-right w-1/2 sm:w-1/2 md:w-2/3 hidden lg:block">
           <nav id="main-nav">
