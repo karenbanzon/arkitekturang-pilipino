@@ -6,7 +6,7 @@
       <?php if ( has_post_thumbnail() ) { ?>
       <header class="header page-hero p-6" style="background-image: url(<?php echo the_post_thumbnail_url(); ?>)">
         <div class="overlay bg-apprimary"></div>
-        <div class="page-title"><h1 class="entry-title w-full lg:w-2/3 ml-auto mr-auto mt-4 mb-4 pt-6 pb-6 text-white"><?php the_title(); ?></h1></div>
+        <div class="page-title"><h1 class="entry-title w-full ml-auto mr-auto mt-4 mb-4 pt-6 pb-6 text-white"><?php the_title(); ?></h1></div>
       </header>
       <?php } else { ?>
       <header class="header w-full p-6">
